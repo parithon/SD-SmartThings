@@ -1,0 +1,32 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<OutputType>Exe</OutputType>
+		<TargetFramework>net6.0</TargetFramework>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+		<Description>A StreamDeck Plug-in to control SmartThings scenes and devices.</Description>
+	</PropertyGroup>
+
+	<PropertyGroup Condition=" $(Configuration) == 'Release' ">
+		<BuildToSDPluginFolder>false</BuildToSDPluginFolder>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Parithon.StreamDeck.SDK" Version="0.1.26" />
+		<PackageReference Include="Parithon.StreamDeck.SDK.MSBuild" Version="0.1.26" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<AssemblyAttribute Include="Parithon.StreamDeck.SDK.AssemblyStreamDeckAttribute" Icon="Images/actionIcon" Category="SmartThings" CategoryIcon="Images/smartthingsIcon" />
+		<AssemblyAttribute Include="Parithon.StreamDeck.SDK.AssemblyStreamDeckOSAttribute" Platform="windows" MinimumVersion="10" />
+		<AssemblyAttribute Include="Parithon.StreamDeck.SDK.AssemblyStreamDeckOSAttribute" Platform="mac" MinimumVersion="10.11" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Content Include="Images\*">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</Content>
+	</ItemGroup>
+
+</Project>
