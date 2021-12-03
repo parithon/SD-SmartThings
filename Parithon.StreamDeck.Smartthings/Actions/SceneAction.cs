@@ -11,12 +11,15 @@ namespace Parithon.StreamDeck.Smartthings.Actions
     {
         public SceneAction()
         {
-            this.States.Add(new StreamDeckActionState() { Image = "Images/sceneAction" });
+            this.States.Add(new StreamDeckActionState() { Image = "Images/sceneAction_off" });
+            this.States.Add(new StreamDeckActionState() { Image = "Images/sceneAction_on" });
         }
 
         public override string Icon => "Images/sceneAction";
 
         public override string Name => "Scene";
+
+        public override string PropertyInspectorPath => "PI/sceneAction.html";
 
         public override void OnKeyDown(KeyPayload payload)
         {

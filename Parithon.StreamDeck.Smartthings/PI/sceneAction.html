@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Scene Action</title>
+    <link rel="stylesheet" href="css/sdpi.css" />
+</head>
+<body>
+    <div class="sdpi-wrapper">
+        <div class="sdpi-item">
+            <div class="sdpi-item-label">Smartthings Identity</div>
+            <div class="sdpi-item-group">
+                <select class="sdpi-item-value select" id="identity-select">
+                    <option id="no-identities" value="no-ident">No Identities Configured</option>
+                </select>
+                <button id="add-identity">add</button>
+            </div>
+        </div>
+        <div id="pi-options" class="hidden">
+            <div class="sdpi-item">
+                <div class="sdpi-item-label">
+                    <select class="sdpi-item-value select" id="room-select">
+                        <option id="no-rooms" value="no rooms found"></option>
+                        <option disabled></option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/main.js"></script>
+    <script src="js/sceneAction.js"></script>
+</body>
+</html>

@@ -18,15 +18,23 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<AssemblyAttribute Include="Parithon.StreamDeck.SDK.AssemblyStreamDeckAttribute" Icon="Images/actionIcon" Category="SmartThings" CategoryIcon="Images/smartthingsIcon" />
+		<AssemblyAttribute Include="Parithon.StreamDeck.SDK.AssemblyStreamDeckAttribute" Icon="Images/pluginIcon" Category="SmartThings" CategoryIcon="Images/smartthingsIcon" />
 		<AssemblyAttribute Include="Parithon.StreamDeck.SDK.AssemblyStreamDeckOSAttribute" Platform="windows" MinimumVersion="10" />
 		<AssemblyAttribute Include="Parithon.StreamDeck.SDK.AssemblyStreamDeckOSAttribute" Platform="mac" MinimumVersion="10.11" />
 	</ItemGroup>
 
 	<ItemGroup>
-		<Content Include="Images\*">
+		<Content Include="Images\**\*">
 			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 		</Content>
+		<Content Include="PI\**\*">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</Content>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <None Remove="PI\js\main.js" />
+	  <None Remove="PI\js\sceneAction.js" />
 	</ItemGroup>
 
 </Project>
