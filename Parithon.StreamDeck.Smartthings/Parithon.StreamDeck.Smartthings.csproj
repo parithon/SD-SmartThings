@@ -4,7 +4,7 @@
 		<OutputType>Exe</OutputType>
 		<TargetFramework>net6.0</TargetFramework>
 		<ImplicitUsings>enable</ImplicitUsings>
-		<Nullable>enable</Nullable>
+		<Nullable>disable</Nullable>
 		<Description>A StreamDeck Plug-in to control SmartThings scenes and devices.</Description>
 	</PropertyGroup>
 
@@ -13,8 +13,8 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-		<PackageReference Include="Parithon.StreamDeck.SDK" Version="0.1.26" />
-		<PackageReference Include="Parithon.StreamDeck.SDK.MSBuild" Version="0.1.26" />
+		<PackageReference Include="Parithon.StreamDeck.SDK" Version="0.1.31" />
+		<PackageReference Include="Parithon.StreamDeck.SDK.MSBuild" Version="0.1.31" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -24,7 +24,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<Content Include="Images\**\*">
+		<Content Include="Images\**\*.png">
 			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 		</Content>
 		<Content Include="PI\**\*">
@@ -33,7 +33,6 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <None Remove="PI\js\main.js" />
 	  <None Remove="PI\js\sceneAction.js" />
 	</ItemGroup>
 
