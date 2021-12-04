@@ -1,0 +1,77 @@
+_type: export
+__export_format: 4
+__export_date: 2021-12-04T00:38:47.611Z
+__export_source: insomnia.desktop.app:v2021.6.0
+resources:
+  - _id: req_b6983e4025a846fba79cfe9d634ded08
+    parentId: fld_96c014d56e5c4b2c9cee3a975d8b5d6d
+    modified: 1638578291600
+    created: 1638577930728
+    url: "{{ _.devices_url }}"
+    name: List Devices
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers: []
+    authentication:
+      type: bearer
+      token: "{{ _.bearer_token }}"
+    metaSortKey: -1638577934321.5
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: fld_96c014d56e5c4b2c9cee3a975d8b5d6d
+    parentId: wrk_a914006b77f14ba9b57db42122b74740
+    modified: 1638578316979
+    created: 1638577937915
+    name: DEVICES
+    description: ""
+    environment: {}
+    environmentPropertyOrder: {}
+    metaSortKey: -1638577937915
+    _type: request_group
+  - _id: wrk_a914006b77f14ba9b57db42122b74740
+    parentId: null
+    modified: 1638577461474
+    created: 1638577461474
+    name: SD-Smartthings
+    description: ""
+    scope: collection
+    _type: workspace
+  - _id: env_c9a5171dd75e1ea0e82532af4821053a28df2df3
+    parentId: wrk_a914006b77f14ba9b57db42122b74740
+    modified: 1638578153532
+    created: 1638577461479
+    name: Base Environment
+    data:
+      base_url: https://api.smartthings.com/v1
+      devices_url: https://api.smartthings.com/v1/devices
+    dataPropertyOrder:
+      "&":
+        - base_url
+        - devices_url
+    color: null
+    isPrivate: false
+    metaSortKey: 1638577461479
+    _type: environment
+  - _id: jar_c9a5171dd75e1ea0e82532af4821053a28df2df3
+    parentId: wrk_a914006b77f14ba9b57db42122b74740
+    modified: 1638577461481
+    created: 1638577461481
+    name: Default Jar
+    cookies: []
+    _type: cookie_jar
+  - _id: spc_391690671bd8433181ddbd254da6fe4a
+    parentId: wrk_a914006b77f14ba9b57db42122b74740
+    modified: 1638577461474
+    created: 1638577461474
+    fileName: SD-Smartthings
+    contents: ""
+    contentType: yaml
+    _type: api_spec
