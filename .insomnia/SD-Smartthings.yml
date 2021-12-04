@@ -1,13 +1,13 @@
 _type: export
 __export_format: 4
-__export_date: 2021-12-04T00:38:47.611Z
+__export_date: 2021-12-04T01:45:32.442Z
 __export_source: insomnia.desktop.app:v2021.6.0
 resources:
   - _id: req_b6983e4025a846fba79cfe9d634ded08
     parentId: fld_96c014d56e5c4b2c9cee3a975d8b5d6d
-    modified: 1638578291600
+    modified: 1638582253067
     created: 1638577930728
-    url: "{{ _.devices_url }}"
+    url: "{{ _.base_url }}/devices"
     name: List Devices
     description: ""
     method: GET
@@ -17,7 +17,7 @@ resources:
     authentication:
       type: bearer
       token: "{{ _.bearer_token }}"
-    metaSortKey: -1638577934321.5
+    metaSortKey: -1638581507062
     isPrivate: false
     settingStoreCookies: true
     settingSendCookies: true
@@ -44,18 +44,324 @@ resources:
     description: ""
     scope: collection
     _type: workspace
+  - _id: req_4a06cadda07440569a0e35119379e277
+    parentId: fld_96c014d56e5c4b2c9cee3a975d8b5d6d
+    modified: 1638582255028
+    created: 1638581507012
+    url: "{{ _.base_url }}/devices/{% response 'body',
+      'req_b6983e4025a846fba79cfe9d634ded08', _.device_filter, 'no-history', 60
+      %}/commands"
+    name: "Execute Command :: Off"
+    description: ""
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        [
+        	{
+        		"capability": "switch",
+        		"command": "off"
+        	}
+        ]
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+        id: pair_4a8d790134634061a1069457bee7557f
+    authentication:
+      type: bearer
+      token: "{{ _.bearer_token }}"
+    metaSortKey: -1638581507012
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_361a62162f59476eb3dc37e81987ad50
+    parentId: fld_96c014d56e5c4b2c9cee3a975d8b5d6d
+    modified: 1638582255720
+    created: 1638581653856
+    url: "{{ _.base_url }}/devices/{% response 'body',
+      'req_b6983e4025a846fba79cfe9d634ded08', _.device_filter, 'no-history', 60
+      %}/commands"
+    name: "Execute Command :: On"
+    description: ""
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        [
+        	{
+        		"capability": "switch",
+        		"command": "on"
+        	}
+        ]
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+        id: pair_4a8d790134634061a1069457bee7557f
+    authentication:
+      type: bearer
+      token: "{{ _.bearer_token }}"
+    metaSortKey: -1638581008418.5
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_a6cf05f158bb4c94b204e1c9431429ea
+    parentId: fld_96c014d56e5c4b2c9cee3a975d8b5d6d
+    modified: 1638582256738
+    created: 1638581716611
+    url: "{{ _.base_url }}/devices/{% response 'body',
+      'req_b6983e4025a846fba79cfe9d634ded08', _.device_filter, 'no-history', 60
+      %}/status"
+    name: Get Full Status of device
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers: []
+    authentication:
+      type: bearer
+      token: "{{ _.bearer_token }}"
+    metaSortKey: -1638581507037
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_649f3f4b73d04dfabd9aa0fcc0240eb3
+    parentId: fld_96c014d56e5c4b2c9cee3a975d8b5d6d
+    modified: 1638582216530
+    created: 1638582110087
+    url: "{{ _.base_url }}/capabilities"
+    name: List Capabilities
+    description: ""
+    method: GET
+    body: {}
+    parameters:
+      - id: pair_8cb9e938c93b4a6692a79138d15d60b6
+        name: status
+        value: live
+        description: ""
+    headers: []
+    authentication:
+      type: bearer
+      token: "{{ _.bearer_token }}"
+    metaSortKey: -1638582110087
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_b77f09909f964eef9e5d8cbeadabf267
+    parentId: fld_4ef774c8ff0d411baa37acd952e3702e
+    modified: 1638581391872
+    created: 1638579703398
+    url: "{{ _.base_url }}/locations"
+    name: List Locations
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers: []
+    authentication:
+      type: bearer
+      token: "{{ _.bearer_token }}"
+    metaSortKey: -1638579703430
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: fld_4ef774c8ff0d411baa37acd952e3702e
+    parentId: wrk_a914006b77f14ba9b57db42122b74740
+    modified: 1638579696586
+    created: 1638579696586
+    name: LOCATIONS
+    description: ""
+    environment: {}
+    environmentPropertyOrder: null
+    metaSortKey: -1638579696587
+    _type: request_group
+  - _id: req_8b88044354df4e94856b2538436d759a
+    parentId: fld_4ef774c8ff0d411baa37acd952e3702e
+    modified: 1638581391074
+    created: 1638580305697
+    url: "{{ _.base_url }}/locations/{% response 'body',
+      'req_b77f09909f964eef9e5d8cbeadabf267',
+      'b64::JC5pdGVtc1swXS5sb2NhdGlvbklk::46b', 'no-history', 60 %}/rooms"
+    name: List Rooms
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers: []
+    authentication:
+      type: bearer
+      token: "{{ _.bearer_token }}"
+    metaSortKey: -1638579703380
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_a0686bb6b04d435b9f1d48c2085f17b8
+    parentId: fld_6d5f3df046764ef8b9abbc927a2e2a3a
+    modified: 1638581055145
+    created: 1638580509825
+    url: "{{ _.base_url }}/rules"
+    name: List Rules
+    description: ""
+    method: GET
+    body: {}
+    parameters:
+      - id: pair_5c5a53d545d240168236e8f35fcedeec
+        name: locationId
+        value: "{% response 'body', 'req_b77f09909f964eef9e5d8cbeadabf267',
+          'b64::JC5pdGVtc1swXS5sb2NhdGlvbklk::46b', 'no-history', 60 %}"
+        description: ""
+    headers: []
+    authentication:
+      type: bearer
+      token: "{{ _.bearer_token }}"
+    metaSortKey: -1638580509825
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: fld_6d5f3df046764ef8b9abbc927a2e2a3a
+    parentId: wrk_a914006b77f14ba9b57db42122b74740
+    modified: 1638580504570
+    created: 1638580504570
+    name: AUTOMATIONS
+    description: ""
+    environment: {}
+    environmentPropertyOrder: null
+    metaSortKey: -1638580504570
+    _type: request_group
+  - _id: req_0799289b2022456591a0e18bc6cdb010
+    parentId: fld_6d5f3df046764ef8b9abbc927a2e2a3a
+    modified: 1638581250547
+    created: 1638580694134
+    url: "{{ _.base_url }}/scenes"
+    name: List Scenes
+    description: ""
+    method: GET
+    body: {}
+    parameters:
+      - id: pair_a00d57d129324b7486d28d3143afb6b6
+        name: locationId
+        value: "{% response 'body', 'req_b77f09909f964eef9e5d8cbeadabf267',
+          'b64::JC5pdGVtc1swXS5sb2NhdGlvbklk::46b', 'no-history', 60 %}"
+        description: ""
+    headers: []
+    authentication:
+      type: bearer
+      token: "{{ _.bearer_token }}"
+    metaSortKey: -1638580509775
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_37442b4a7ab74f9faf08164eaff1c9bf
+    parentId: fld_6d5f3df046764ef8b9abbc927a2e2a3a
+    modified: 1638581389583
+    created: 1638581086212
+    url: "{{ _.base_url }}/scenes/{% response 'body',
+      'req_0799289b2022456591a0e18bc6cdb010',
+      'b64::JC5pdGVtc1s/KEAuc2NlbmVOYW1lID09ICJOaWdodCBMaWdodCIpXS5zY2VuZUlk::4\
+      6b', 'no-history', 60 %}/execute"
+    name: Execute a Scene (Night Light)
+    description: ""
+    method: POST
+    body: {}
+    parameters:
+      - id: pair_b573694aa55f4c9cba68243c1733bcb4
+        name: ""
+        value: ""
+        description: ""
+    headers: []
+    authentication:
+      type: bearer
+      token: "{{ _.bearer_token }}"
+    metaSortKey: -1638580509725
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_865a3382e9f548fb8840bf95781d3fe6
+    parentId: fld_6d5f3df046764ef8b9abbc927a2e2a3a
+    modified: 1638581388895
+    created: 1638581315401
+    url: "{{ _.base_url }}/scenes/{% response 'body',
+      'req_0799289b2022456591a0e18bc6cdb010',
+      'b64::JC5pdGVtc1s/KEAuc2NlbmVOYW1lID09ICJOaWdodCBCcmlnaHQiKV0uc2NlbmVJZA=\
+      =::46b', 'no-history', 60 %}/execute"
+    name: Execute a Scene (Night Bright)
+    description: ""
+    method: POST
+    body: {}
+    parameters:
+      - id: pair_b573694aa55f4c9cba68243c1733bcb4
+        name: ""
+        value: ""
+        description: ""
+    headers: []
+    authentication:
+      type: bearer
+      token: "{{ _.bearer_token }}"
+    metaSortKey: -1638580106577.5
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
   - _id: env_c9a5171dd75e1ea0e82532af4821053a28df2df3
     parentId: wrk_a914006b77f14ba9b57db42122b74740
-    modified: 1638578153532
+    modified: 1638580619857
     created: 1638577461479
     name: Base Environment
     data:
       base_url: https://api.smartthings.com/v1
-      devices_url: https://api.smartthings.com/v1/devices
     dataPropertyOrder:
       "&":
         - base_url
-        - devices_url
     color: null
     isPrivate: false
     metaSortKey: 1638577461479
