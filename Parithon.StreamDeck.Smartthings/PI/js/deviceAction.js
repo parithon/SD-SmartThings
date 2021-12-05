@@ -40,7 +40,7 @@ function connectElgatoStreamDeckSocket(inPort, inUUID, inRegisterEvent, inInfo, 
     info = JSON.parse(inInfo);
     uuid = inUUID;
 
-    const sceneSelect = document.getElementById("scene-select");
+    const sceneSelect = document.getElementById("device-select");
     sceneSelect.addEventListener('change', (evt) => {
         var json = {
             action: actionInfo.action,
@@ -48,7 +48,7 @@ function connectElgatoStreamDeckSocket(inPort, inUUID, inRegisterEvent, inInfo, 
             context: uuid,
             payload: {
                 command: "select",
-                sceneId: sceneSelect.value
+                deviceId: sceneSelect.value
             }
         };
         websocket.send(JSON.stringify(json));
@@ -75,9 +75,9 @@ function connectElgatoStreamDeckSocket(inPort, inUUID, inRegisterEvent, inInfo, 
 
         if (event === "sendToPropertyInspector") {
             console.log(`sendToPropertyInspector: ${JSON.stringify(jsonPayload)}`);
-            var scenes = jsonPayload.scenes;
-            sceneSelect.innerHTML = `<option>Select a scene</option>`;
-            sceneSelect.innerHTML += scenes.map(s => `<option value="${s.SceneId}" ${s.Selected ? "selected" : ""}>${s.SceneName}</option>`);
+            var scenes = jsonPayload.devices;
+            sceneSelect.innerHTML = `<option>Select a device</option>`;
+            sceneSelect.innerHTML += scenes.map(s => `<option value="${s.DeviceId}" ${s.Selected ? "selected" : ""}>${s.Label}</option>`);
         }
     }
 }

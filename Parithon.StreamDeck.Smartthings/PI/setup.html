@@ -1,0 +1,19 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Setup Plugin</title>
+</head>
+<body>
+    <input id="authToken" type="password" placeholder="Authentication Token" />
+    <button onclick="save()">Save</button>
+    <script type="text/javascript">
+        function save() {
+            var authTokenElm = document.getElementById("authToken");
+            var authToken = authTokenElm.value;
+            console.log(`authToken: ${authToken}`);
+            window.opener.getCallbackFromWindow(authToken);
+            window.close();
+        }
+    </script>
+</body>
+</html>

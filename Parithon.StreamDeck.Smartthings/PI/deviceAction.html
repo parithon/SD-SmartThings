@@ -1,23 +1,25 @@
 ﻿<!DOCTYPE html>
-<html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <title>Scene Action</title>
+    <meta charset="utf-8" />
+    <title>Smartthings Device Action</title>
     <link rel="stylesheet" href="css/sdpi.css" />
 </head>
 <body>
     <div class="sdpi-wrapper">
         <div id="pi-options">
             <div class="sdpi-item">
-                <div class="sdpi-item-label">Scene</div>
+                <div class="sdpi-item-label">Device</div>
                 <div class="sdpi-item-group">
-                    <select class="sdpi-item-value select" id="scene-select">
-                        <option id="no-scene" selected disabled>Select a scene</option>
+                    <select class="sdpi-item-value select" id="device-select">
+                        <option id="no-device" selected disabled>Select a device</option>
                     </select>
                     <button class="sdpi-item-value" onclick="refreshScenes()">🔃</button>
                 </div>
             </div>
         </div>
     </div>
-    <script src="js/sceneAction.js"></script>
+    <script src="js/deviceAction.js"></script>
 </body>
 </html>
