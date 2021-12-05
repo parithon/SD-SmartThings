@@ -18,13 +18,12 @@ sdclient.Connected += (s, e) =>
 sdclient.Disconnected += (s, e) => {
     stclient.CancelPendingRequests();
 };
-//sdclient.DidReceiveGlobalSettings += async (s, e) =>
-//{
-//    if (e.Payload.Settings && !string.IsNullOrEmpty(e.Payload.Settings.AuthToken))
-//    {
-//        stclient.SetAuthToken(e.Payload.Settings.AuthToken);
-//        await stclient.RefreshDevicesAsync();
-//    }
-//};
+sdclient.DidReceiveGlobalSettings += async (s, e) =>
+{
+    string authToken = e.Payload.Settings.authToken;
+    stclient.SetAuthToken(authToken);
+    await stclient.RefreshDevicesAsync();
+    await stclient.RefreshScenesAsync();
+};
 
 sdclient.Execute();

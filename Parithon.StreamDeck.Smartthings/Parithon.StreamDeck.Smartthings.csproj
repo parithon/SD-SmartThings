@@ -14,8 +14,8 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-		<PackageReference Include="Parithon.StreamDeck.SDK" Version="0.1.31" />
-		<PackageReference Include="Parithon.StreamDeck.SDK.MSBuild" Version="0.1.31" />
+		<PackageReference Include="Parithon.StreamDeck.SDK" Version="0.3.11-g144643b454" />
+		<PackageReference Include="Parithon.StreamDeck.SDK.MSBuild" Version="0.3.11-g144643b454" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -34,7 +34,11 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <None Remove="PI\css\setup.css" />
+	  <None Remove="PI\deviceAction.html" />
+	  <None Remove="PI\js\deviceAction.js" />
 	  <None Remove="PI\js\sceneAction.js" />
+	  <None Remove="PI\setup.html" />
 	</ItemGroup>
 
 </Project>
