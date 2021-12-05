@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="144"
+   height="144"
+   viewBox="0 0 38.100001 38.100001"
+   version="1.1"
+   id="svg102"
+   inkscape:version="1.1.1 (3bf5ae0d25, 2021-09-20)"
+   sodipodi:docname="deviceAction.svg"
+   inkscape:export-filename="D:\dev\parithon\SD-SmartThings\Parithon.StreamDeck.Smartthings\Images\deviceAction@2x.png"
+   inkscape:export-xdpi="26.67"
+   inkscape:export-ydpi="26.67"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview104"
+     pagecolor="#505050"
+     bordercolor="#ffffff"
+     borderopacity="1"
+     inkscape:pageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="1"
+     inkscape:document-units="mm"
+     showgrid="false"
+     width="144mm"
+     units="px"
+     inkscape:zoom="6.2217172"
+     inkscape:cx="65.97857"
+     inkscape:cy="83.497849"
+     inkscape:window-width="2560"
+     inkscape:window-height="1351"
+     inkscape:window-x="-9"
+     inkscape:window-y="-9"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="g24760" />
+  <defs
+     id="defs99" />
+  <g
+     inkscape:groupmode="layer"
+     id="g16732"
+     inkscape:label="deviceAction-bg"
+     style="display:none">
+    <rect
+       style="fill:#8800aa;fill-opacity:1;stroke-width:2.10445"
+       id="rect16730"
+       width="38.099998"
+       height="38.099998"
+       x="0"
+       y="-2.1684043e-19" />
+  </g>
+  <g
+     inkscape:label="deviceAction-fg"
+     inkscape:groupmode="layer"
+     id="g16768"
+     style="display:none;mix-blend-mode:normal">
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:25.4px;line-height:1.25;font-family:'CaskaydiaCove Nerd Font';-inkscape-font-specification:'CaskaydiaCove Nerd Font, Normal';font-variant-ligatures:none;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#d8d8d8;fill-opacity:1;stroke-width:0.264583"
+       x="7.2925782"
+       y="24.221777"
+       id="text16766"><tspan
+         sodipodi:role="line"
+         id="tspan16764"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:25.4px;font-family:'CaskaydiaCove Nerd Font';-inkscape-font-specification:'CaskaydiaCove Nerd Font, Normal';font-variant-ligatures:none;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#d8d8d8;fill-opacity:1;stroke-width:0.264583"
+         x="7.2925782"
+         y="24.221777">⏼</tspan></text>
+  </g>
+  <g
+     inkscape:label="deviceAction"
+     inkscape:groupmode="layer"
+     id="g24760"
+     style="display:inline;mix-blend-mode:normal">
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:33.8667px;line-height:1.25;font-family:'CaskaydiaCove Nerd Font';-inkscape-font-specification:'CaskaydiaCove Nerd Font, Normal';font-variant-ligatures:none;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#d8d8d8;fill-opacity:1;stroke-width:0.264583"
+       x="3.3734224"
+       y="31.435806"
+       id="text24758"><tspan
+         sodipodi:role="line"
+         id="tspan24756"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:33.8667px;font-family:'CaskaydiaCove Nerd Font';-inkscape-font-specification:'CaskaydiaCove Nerd Font, Normal';font-variant-ligatures:none;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#d8d8d8;fill-opacity:1;stroke-width:0.264583"
+         x="3.3734224"
+         y="31.435806">⏼</tspan></text>
+  </g>
+</svg>

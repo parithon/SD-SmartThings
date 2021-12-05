@@ -1,0 +1,78 @@
+name: Development
+
+on:
+  push:
+    branches: [ dev ]
+
+jobs:
+  build:
+
+    runs-on: windows-latest
+
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        fetch-depth: 0
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: 6.0.x
+    - name: Setup Nerdbank.GitVersioning
+      run: dotnet tool install -g nbgv
+    - name: Version
+      id: version
+      run: echo "::set-output name=version::$(nbgv get-version -v SemVer2)"
+    - name: Build
+      run: dotnet build --configuration Release --nologo
+    - name: Publish
+      run: |
+        dotnet publish --configuration Release --self-contained --runtime osx-x64
+        dotnet publish --configuration Release --self-contained --runtime win-x86 -t:StreamDeckDistribution
+    - name: Upload streamDeckPlugin
+      uses: actions/upload-artifact@v2
+      with:
+        name: sdPlugin
+        path: "./Parithon.StreamDeck.Smartthings/bin/Release/net6.0/publish/parithon.streamdeck.smartthings.streamDeckPlugin"
+        
+    outputs:
+      version: ${{ steps.version.outputs.version }}
+
+  release:
+  
+    needs: [ build ]
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/download-artifact@v2
+      with:
+        name: sdPlugin
+    - uses: actions/create-release@v1
+      id: create_release
+      with:
+        draft: false
+        prerelease: true
+        release_name: v${{ needs.build.outputs.version }}
+        tag_name: v${{ needs.build.outputs.version }}
+      env:
+        GITHUB_TOKEN: ${{ github.token }}
+    - uses: actions/upload-release-asset@v1
+      id: upload_sdPlugin_asset
+      with:
+        upload_url: ${{ steps.create_release.outputs.upload_url }}
+        asset_path: "parithon.streamdeck.smartthings.streamDeckPlugin"
+        asset_name: "parithon.streamdeck.smartthings-${{ needs.build.outputs.version }}.streamDeckPlugin"
+        asset_content_type: "application/zip"
+      env:
+        GITHUB_TOKEN: ${{ github.token }}
+    
+  cleanup:
+  
+    needs: [ build, release ]
+    if: ${{ always() }}
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: GeekyEggo/delete-artifact@v1.0.0
+      with:
+        name: sdPlugin
+        failOnError: false

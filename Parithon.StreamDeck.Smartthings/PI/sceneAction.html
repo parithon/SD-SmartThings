@@ -1,0 +1,26 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Scene Action</title>
+    <link rel="stylesheet" href="css/sdpi.css" />
+</head>
+<body>
+    <div class="sdpi-wrapper">
+        <div id="pi-options">
+            <div class="sdpi-item">
+                <div class="sdpi-item-label">Scene</div>
+                <div class="sdpi-item-group">
+                    <select class="sdpi-item-value select" id="scene-select">
+                        <option id="no-scene" selected disabled>Select a scene</option>
+                    </select>
+                    <button class="sdpi-item-value" onclick="refreshScenes()">🔃</button>
+                </div>
+            </div>
+            <div class="sdpi-item">
+                <button class="sdpi-item-value" onclick="resetToken()">Clear Token</button>
+            </div>
+        </div>
+    </div>
+    <script src="js/sceneAction.js"></script>
+</body>
+</html>
