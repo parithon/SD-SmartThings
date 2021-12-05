@@ -8,6 +8,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Github Actions", "Github Actions", "{1A19C87A-7586-4405-8E1A-160D1B726AD5}"
 	ProjectSection(SolutionItems) = preProject
 		.github\workflows\dev.yaml = .github\workflows\dev.yaml
+		.github\workflows\main.yaml = .github\workflows\main.yaml
 	EndProjectSection
 EndProject
 Global
