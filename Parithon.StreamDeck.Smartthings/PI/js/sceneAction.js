@@ -109,3 +109,18 @@ function refreshScenes() {    ;
         websocket.send(JSON.stringify(json));
     }
 }
+
+function resetToken() {
+    if (websocket) {
+        var json = {
+            event: "setGlobalSettings",
+            context: uuid,
+            payload: {
+                Settings: {
+                    authToken: ""
+                }
+            }
+        };
+        websocket.send(JSON.stringify(json));
+    }
+}
