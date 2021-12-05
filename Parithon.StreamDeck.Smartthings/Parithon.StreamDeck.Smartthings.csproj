@@ -6,6 +6,7 @@
 		<ImplicitUsings>enable</ImplicitUsings>
 		<Nullable>disable</Nullable>
 		<Description>A StreamDeck Plug-in to control SmartThings scenes and devices.</Description>
+		<AssemblyName>sdsmartthings</AssemblyName>
 	</PropertyGroup>
 
 	<PropertyGroup Condition=" $(Configuration) == 'Release' ">

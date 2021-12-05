@@ -3,7 +3,12 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.1.31911.260
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Parithon.StreamDeck.Smartthings", "Parithon.StreamDeck.Smartthings\Parithon.StreamDeck.Smartthings.csproj", "{10E07972-B489-46DE-A045-ABCCD2EE2DE2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Parithon.StreamDeck.Smartthings", "Parithon.StreamDeck.Smartthings\Parithon.StreamDeck.Smartthings.csproj", "{10E07972-B489-46DE-A045-ABCCD2EE2DE2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Github Actions", "Github Actions", "{1A19C87A-7586-4405-8E1A-160D1B726AD5}"
+	ProjectSection(SolutionItems) = preProject
+		.github\workflows\dev.yaml = .github\workflows\dev.yaml
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
