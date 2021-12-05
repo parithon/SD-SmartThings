@@ -30,6 +30,7 @@ namespace Parithon.StreamDeck.Smartthings
 
         public async Task RefreshDevicesAsync()
         {
+            if (!this.authenticationSet) return;
             var result = await this.GetStringAsync("devices?capability=switch");
             this.Devices = result == null ? null : JsonConvert.DeserializeObject<DeviceResults>(result).Items;
             this.OnDevicesRefreshed?.Invoke(this, EventArgs.Empty);
@@ -37,6 +38,7 @@ namespace Parithon.StreamDeck.Smartthings
 
         public async Task RefreshScenesAsync()
         {
+            if (!this.authenticationSet) return;
             var result = await this.GetStringAsync("scenes");
             this.Scenes = result == null ? null : JsonConvert.DeserializeObject<SceneResults>(result).Items;
             this.OnScenesRefreshed?.Invoke(this, EventArgs.Empty);
