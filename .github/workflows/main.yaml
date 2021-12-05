@@ -50,7 +50,7 @@ jobs:
       id: create_release
       with:
         draft: false
-        prerelease: true
+        prerelease: false
         release_name: v${{ needs.build.outputs.version }}
         tag_name: v${{ needs.build.outputs.version }}
       env:
