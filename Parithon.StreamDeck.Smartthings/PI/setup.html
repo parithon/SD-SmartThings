@@ -2,10 +2,45 @@
 <html>
 <head>
     <title>Setup Plugin</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css" />
+    <link rel="stylesheet" href="css/setup.css" />
 </head>
 <body>
-    <input id="authToken" type="password" placeholder="Authentication Token" />
-    <button onclick="save()">Save</button>
+    <div class="container auth">
+        <h1 class="logo">SMARTTHINGS</h1>
+        <h2 class="logo">Personal Access Token</h2>
+        <div class="desc">
+            <p>
+                Personal access tokens are used to authorize interaction with the API for non-SmartApp use cases.
+                When creating personal access tokens, you can specifiy the permissions granted to the token.
+                These permissions define the OAuth2 scopes for the personal access token.
+                <span class="bold">This plugin requires the following OAuth2 scopes:</span>
+            </p>
+            <ol>
+                <li>List all devices</li>
+                <li>Controll all devices</li>
+                <li>See all scenes</li>
+                <li>Controll this scene</li>
+            </ol>
+            <p>
+                Please request a <a href="https://account.smartthings.com/tokens" target="_blank">personal access token</a> and supply the token below.
+            </p>
+        </div>
+        <div class="card">
+            <div class="card-content">
+                <div class="row">
+                    <div class="input-field col s12">
+                        <label>Token</label>
+                        <input id="authToken" type="password" class="validate" />
+                    </div>
+                    <button class="waves-effect waves-light btn" onclick="save()">SAVE</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js"></script>
     <script type="text/javascript">
         function save() {
             var authTokenElm = document.getElementById("authToken");

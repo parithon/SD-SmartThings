@@ -23,6 +23,7 @@ namespace Parithon.StreamDeck.Smartthings
 
         public void SetAuthToken(string authToken)
         {
+            if (string.IsNullOrEmpty(authToken)) return;
             this.DefaultRequestHeaders.Remove("Authorization");
             this.DefaultRequestHeaders.Add("Authorization", $"Bearer {authToken}");
             this.authenticationSet = true;

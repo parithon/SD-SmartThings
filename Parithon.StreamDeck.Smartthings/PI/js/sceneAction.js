@@ -68,9 +68,7 @@ function connectElgatoStreamDeckSocket(inPort, inUUID, inRegisterEvent, inInfo, 
 
         if (event === "didReceiveGlobalSettings") {
             globalSettings = jsonPayload["settings"];
-            if (!globalSettings.hasOwnProperty("authToken")) {
-                window.open("setup.html");
-            }
+            checkAuthToken();
         }
 
         if (event === "sendToPropertyInspector") {
@@ -82,6 +80,14 @@ function connectElgatoStreamDeckSocket(inPort, inUUID, inRegisterEvent, inInfo, 
     }
 }
 
+function checkAuthToken() {
+    if (!globalSettings.hasOwnProperty("authToken")) {
+        window.open("setup.html");
+        return false;
+    }
+    return true;
+}
+
 function getCallbackFromWindow(authToken) {
     console.log(`authToken: ${authToken}`);
     if (websocket) {
@@ -90,8 +96,8 @@ function getCallbackFromWindow(authToken) {
     }
 }
 
-function refreshScenes() {
-    if (websocket) {
+function refreshScenes() {    ;
+    if (websocket && checkAuthToken()) {
         var json = {
             action: actionInfo.action,
             event: "sendToPlugin",
